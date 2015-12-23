@@ -1,0 +1,29 @@
+{
+  "name": "icons-loader",
+  "version": "0.0.1",
+  "description": "Icons loader for webpack",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomgrooffer/icons-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "icon",
+    "font",
+    "svg"
+  ],
+  "author": "Mike Vercoelen <mike.vercoelen@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomgrooffer/icons-loader/issues"
+  },
+  "homepage": "https://github.com/tomgrooffer/icons-loader#readme",
+  "dependencies": {
+    "enhanced-resolve": "^0.9.1",
+    "gulp-iconfont": "^5.0.1",
+    "loader-utils": "^0.2.12",
+    "vinyl": "^1.1.0",
+    "webpack-core": "^0.6.8"
+  }
+}
