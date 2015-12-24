@@ -1,7 +1,8 @@
 # Icons loader (for webpack)
 
 This is a [webpack](https://github.com/webpack/webpack) loader for generating an iconfont from SVG dependencies.
-Based on [iconfont-loader](https://www.npmjs.com/package/iconfont-loader) by [Jussi Kalliokoski](https://github.com/jussi-kalliokoski) thanks and <3. This module is maintained and updated with the latest dependencies.
+
+Based on [iconfont-loader](https://www.npmjs.com/package/iconfont-loader) by [Jussi Kalliokoski](https://github.com/jussi-kalliokoski) thanks and <3. 
 
 It uses [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) to create the font.
 
