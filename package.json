@@ -25,6 +25,7 @@
     "enhanced-resolve": "^0.9.1",
     "gulp-iconfont": "^5.0.1",
     "loader-utils": "^0.2.12",
+    "merge": "^1.2.0",
     "vinyl": "^1.1.0",
     "webpack-core": "^0.6.8"
   }

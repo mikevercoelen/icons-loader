@@ -2,6 +2,7 @@ var path = require("path");
 var crypto = require("crypto");
 var Vinyl = require("vinyl");
 var iconfont = require("gulp-iconfont");
+var merge = require('merge');
 var LoaderUtils = require("loader-utils");
 var RawSource = require("webpack-core/lib/RawSource");
 var ModuleAliasPlugin = require("enhanced-resolve/lib/ModuleAliasPlugin");
@@ -19,12 +20,13 @@ function jsonDependency (objectFactory) {
 
 function IconsPlugin (options) {
     options = options || {};
-    this.options = {
+
+    this.options = merge.recursive(true, options, {
         fontName: options.fontName || "icons",
         filenameTemplate: options.filenameTemplate || {
             name: "[name]-[hash].[ext]",
-        },
-    };
+        }
+    });
 
     this.glyphs = [];
     this.styles = {};
