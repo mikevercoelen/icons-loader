@@ -5,10 +5,15 @@ Based on [iconfont-loader](https://www.npmjs.com/package/iconfont-loader) by [Ju
 
 It uses [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) to create the font.
 
+## Features
+
+- Automatically generates fonts (iconfont) from `.svg` files
+- Webpack loader + plugin for seamless workflow integration
+
 ## Installation
 
 ```
-npm install icons-loader
+npm install icons-loader --save-dev
 ```
 
 ## Basic usage
