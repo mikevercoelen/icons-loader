@@ -26,7 +26,7 @@ const webpackConfig = {
       loader: 'icons-loader',
   }],
   plugins: [
-    new IconFontPlugin({
+    new IconsPlugin({
       fontName: 'icons',
       timestamp: RUN_TIMESTAMP,
       normalize: true,
@@ -39,7 +39,7 @@ const webpackConfig = {
 Now you can require the icons in your code:
 
 ```javascript
-import IconFont from 'icons-loader'
+import iconFont from 'icons-loader'
 import menu from './menu.svg'
 
 console.log(iconFont) /*
@@ -66,9 +66,12 @@ console.log(menu) /*
 
 ## Example workflow integration
 
-So how can you integrate `icons-loader` into your current webpack workflow? Here is how I use it:
+So how can you integrate `icons-loader` into your webpack workflow? Here is how I use it:
 
-- Create an `icons` directory in your project `src` and put in all the `.svg` icons
+- Create an `icons` directory in your project `src`
+- Add `.svg` icons to the `icons` directory, check out these websites for free and excellent `.svg` icons:
+  - [Noun Project](https://thenounproject.com/)) (recommended)
+  - [UX Repo](http://uxrepo.com/)
 - Create an `index.js` file in the new `icons` directory:
 
 ```javascript
@@ -137,7 +140,7 @@ src/components/header.js
 <Icon name='menu' />
 ```
 
-- Finally use [style-inject](https://www.npmjs.com/package/style-inject) or similar package to inject the css returned from `import IconFont from 'iconfont-loader'` in your body
+- Finally use [style-inject](https://www.npmjs.com/package/style-inject) or similar package to inject the css returned from `import iconFont from 'icons-loader'` in your body
 
 The best way to do this is in your main `app` component. For example:
 
@@ -148,7 +151,7 @@ import { render } from 'react-dom'
 ...
 
 import styleInject from 'style-inject'
-import IconFont from `icons-loader`
+import iconFont from `icons-loader`
 
 const injectIconFont = function () {
   styleInject(iconFont.css)
@@ -169,6 +172,20 @@ injectIconFont()
 * `filenameTemplate.regExp` the regexp passed to `loader-utils`
 
 You can also add [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont#options) options.
+
+#### Recommended options
+
+```javascript
+
+const RUN_TIMESTAMP = Math.round(Date.now() / 1000)
+const iconsPluginOptions = {
+  fontName: 'icons',
+  timestamp: RUN_TIMESTAMP,
+  normalize: true,
+  formats: ['ttf', 'eot', 'woff', 'svg']
+}
+
+```
 
 ### Loader
 
