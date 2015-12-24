@@ -1,5 +1,5 @@
-var GLYPHS = processGlyphs(__FONT_ICON_PLUGIN_GLYPHS__);
-var STYLES = __FONT_ICON_PLUGIN_STYLES__;
+var GLYPHS = processGlyphs(__ICONS_PLUGIN_GLYPHS__);
+var STYLES = __ICONS_PLUGIN_STYLES__;
 
 function processGlyphs (glyphs) {
   glyphs.forEach(function (glyph) {

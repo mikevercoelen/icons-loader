@@ -30,7 +30,7 @@ function IconsPlugin (options) {
     this.styles = {};
 }
 
-IconsPlugins.prototype.apply = function (compiler) {
+IconsPlugin.prototype.apply = function (compiler) {
     var plugin = this;
 
     compiler.resolvers.normal.apply(new ModuleAliasPlugin({
@@ -107,11 +107,11 @@ IconsPlugins.prototype.apply = function (compiler) {
         });
     });
 
-    compiler.parser.plugin("expression __FONT_ICON_PLUGIN_GLYPHS__", jsonDependency(function () {
+    compiler.parser.plugin("expression __ICONS_PLUGIN_GLYPHS__", jsonDependency(function () {
         return plugin.glyphs;
     }));
 
-    compiler.parser.plugin("expression __FONT_ICON_PLUGIN_STYLES__", jsonDependency(function () {
+    compiler.parser.plugin("expression __ICONS_PLUGIN_STYLES__", jsonDependency(function () {
         return plugin.styles;
     }));
 };

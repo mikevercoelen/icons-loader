@@ -1,4 +1,4 @@
-# Iconfont webpack
+# Icons loader (for webpack)
 
 This is a [webpack](https://github.com/webpack/webpack) loader for generating an iconfont from SVG dependencies.
 Based on [iconfont-loader](https://www.npmjs.com/package/iconfont-loader) by [Jussi Kalliokoski](https://github.com/jussi-kalliokoski) thanks and <3. This module is maintained and updated with the latest dependencies.
@@ -8,7 +8,7 @@ It uses [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) to create t
 ## Installation
 
 ```
-npm install iconfont-webpack
+npm install icons-loader
 ```
 
 ## Basic usage
@@ -16,14 +16,14 @@ npm install iconfont-webpack
 Add the loader and plugin to your webpack config:
 
 ```javascript
-import IconFontPlugin from 'iconfont-webpack/IconFontPlugin'
+import IconsPlugin from 'icons-loader/IconsPlugin'
 
 const RUN_TIMESTAMP = Math.round(Date.now() / 1000)
 
 const webpackConfig = {
   loaders: [{
       test: /\.svg$/,
-      loader: 'iconfont-webpack',
+      loader: 'icons-loader',
   }],
   plugins: [
     new IconFontPlugin({
@@ -39,7 +39,7 @@ const webpackConfig = {
 Now you can require the icons in your code:
 
 ```javascript
-import IconFont from 'iconfont-webpack'
+import IconFont from 'icons-loader'
 import menu from './menu.svg'
 
 console.log(iconFont) /*
@@ -66,7 +66,7 @@ console.log(menu) /*
 
 ## Example workflow integration
 
-So how can you integrate `iconfont-webpack` into your current webpack workflow? Here is how I use it:
+So how can you integrate `icons-loader` into your current webpack workflow? Here is how I use it:
 
 - Create an `icons` directory in your project `src` and put in all the `.svg` icons
 - Create an `index.js` file in the new `icons` directory:
@@ -137,7 +137,7 @@ src/components/header.js
 <Icon name='menu' />
 ```
 
-- Finally use [style-inject](https://www.npmjs.com/package/style-inject) or similar package to inject the css returned from `import IconFont from 'iconfont-webpack'` in your body
+- Finally use [style-inject](https://www.npmjs.com/package/style-inject) or similar package to inject the css returned from `import IconFont from 'iconfont-loader'` in your body
 
 The best way to do this is in your main `app` component. For example:
 
@@ -148,7 +148,7 @@ import { render } from 'react-dom'
 ...
 
 import styleInject from 'style-inject'
-import IconFont from `iconfont-webpack`
+import IconFont from `icons-loader`
 
 const injectIconFont = function () {
   styleInject(iconFont.css)
@@ -190,7 +190,7 @@ const iconModuleTemplate = encodeURIComponent('module.exports = require("react")
 const webpackConfig = {
   loaders: [{
       test: /\.svg$/,
-      loader: "iconfont-webpack?template=" + iconModuleTemplate,
+      loader: "icons-loader?template=" + iconModuleTemplate,
   }],
   ...
 }
