@@ -157,7 +157,7 @@ import { render } from 'react-dom'
 ...
 
 import styleInject from 'style-inject'
-import iconFont from `icons-loader`
+import iconFont from 'icons-loader'
 
 const injectIconFont = function () {
   styleInject(iconFont.css)
