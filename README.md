@@ -11,6 +11,10 @@ It uses [gulp-iconfont](https://www.npmjs.com/package/gulp-iconfont) to create t
 - Automatically generates fonts (iconfont) from `.svg` files
 - Webpack loader + plugin for seamless workflow integration
 
+## Note
+
+- This only works with Webpack 1.x, does not currently work with Webpack 2 or higher.
+
 ## Installation
 
 ```
